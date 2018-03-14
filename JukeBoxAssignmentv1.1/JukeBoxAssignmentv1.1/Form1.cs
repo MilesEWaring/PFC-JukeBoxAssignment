@@ -16,5 +16,10 @@ namespace JukeBoxAssignmentv1._1
         {
             InitializeComponent();
         }
+
+        private void setUPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
