@@ -30,16 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.GenreTitle_txtBox = new System.Windows.Forms.TextBox();
-            this.GenreList_lstBox = new System.Windows.Forms.ListBox();
             this.SelectGenre_HscrollBar = new System.Windows.Forms.HScrollBar();
+            this.GenreList_lstBox = new System.Windows.Forms.ListBox();
+            this.GenreTitle_txtBox = new System.Windows.Forms.TextBox();
             this.PresentlyPlaying_txtBox = new System.Windows.Forms.TextBox();
             this.PlayList_ListBox = new System.Windows.Forms.ListBox();
             this.HierarchicalMenu = new System.Windows.Forms.MenuStrip();
             this.Setup_MenuStrip_Btn = new System.Windows.Forms.ToolStripMenuItem();
             this.About_MenuStrip_Btn = new System.Windows.Forms.ToolStripMenuItem();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.Copyright_Lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.HierarchicalMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,13 +57,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // GenreTitle_txtBox
+            // SelectGenre_HscrollBar
             // 
-            this.GenreTitle_txtBox.BackColor = System.Drawing.Color.Salmon;
-            this.GenreTitle_txtBox.Location = new System.Drawing.Point(0, 0);
-            this.GenreTitle_txtBox.Name = "GenreTitle_txtBox";
-            this.GenreTitle_txtBox.Size = new System.Drawing.Size(181, 20);
-            this.GenreTitle_txtBox.TabIndex = 0;
+            this.SelectGenre_HscrollBar.Location = new System.Drawing.Point(0, 77);
+            this.SelectGenre_HscrollBar.Name = "SelectGenre_HscrollBar";
+            this.SelectGenre_HscrollBar.Size = new System.Drawing.Size(181, 20);
+            this.SelectGenre_HscrollBar.TabIndex = 2;
             // 
             // GenreList_lstBox
             // 
@@ -70,12 +72,13 @@
             this.GenreList_lstBox.Size = new System.Drawing.Size(181, 56);
             this.GenreList_lstBox.TabIndex = 1;
             // 
-            // SelectGenre_HscrollBar
+            // GenreTitle_txtBox
             // 
-            this.SelectGenre_HscrollBar.Location = new System.Drawing.Point(0, 77);
-            this.SelectGenre_HscrollBar.Name = "SelectGenre_HscrollBar";
-            this.SelectGenre_HscrollBar.Size = new System.Drawing.Size(181, 20);
-            this.SelectGenre_HscrollBar.TabIndex = 2;
+            this.GenreTitle_txtBox.BackColor = System.Drawing.Color.Salmon;
+            this.GenreTitle_txtBox.Location = new System.Drawing.Point(0, 0);
+            this.GenreTitle_txtBox.Name = "GenreTitle_txtBox";
+            this.GenreTitle_txtBox.Size = new System.Drawing.Size(181, 20);
+            this.GenreTitle_txtBox.TabIndex = 0;
             // 
             // PresentlyPlaying_txtBox
             // 
@@ -117,6 +120,28 @@
             this.About_MenuStrip_Btn.Name = "About_MenuStrip_Btn";
             this.About_MenuStrip_Btn.Size = new System.Drawing.Size(52, 20);
             this.About_MenuStrip_Btn.Text = "About";
+            this.About_MenuStrip_Btn.Click += new System.EventHandler(this.About_MenuStrip_Btn_Click);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, -1);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(211, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 6;
+            this.axWindowsMediaPlayer1.Visible = false;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
+            // 
+            // Copyright_Lbl
+            // 
+            this.Copyright_Lbl.AutoSize = true;
+            this.Copyright_Lbl.BackColor = System.Drawing.Color.DarkGray;
+            this.Copyright_Lbl.Location = new System.Drawing.Point(197, 9);
+            this.Copyright_Lbl.Name = "Copyright_Lbl";
+            this.Copyright_Lbl.Size = new System.Drawing.Size(168, 13);
+            this.Copyright_Lbl.TabIndex = 7;
+            this.Copyright_Lbl.Text = "Copyright © Miles Ejgierd - Waring";
             // 
             // Form1
             // 
@@ -125,6 +150,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(365, 499);
+            this.Controls.Add(this.Copyright_Lbl);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.PlayList_ListBox);
             this.Controls.Add(this.PresentlyPlaying_txtBox);
             this.Controls.Add(this.groupBox1);
@@ -136,6 +163,7 @@
             this.groupBox1.PerformLayout();
             this.HierarchicalMenu.ResumeLayout(false);
             this.HierarchicalMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +180,8 @@
         private System.Windows.Forms.MenuStrip HierarchicalMenu;
         private System.Windows.Forms.ToolStripMenuItem Setup_MenuStrip_Btn;
         private System.Windows.Forms.ToolStripMenuItem About_MenuStrip_Btn;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Label Copyright_Lbl;
     }
 }
 

@@ -19,7 +19,19 @@ namespace JukeBoxAssignmentv1._1
 
         private void setUPToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SetUp setUp = new SetUp();
+            setUp.ShowDialog();
+        }
 
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void About_MenuStrip_Btn_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
         }
     }
 }
