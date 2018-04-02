@@ -19,7 +19,6 @@ namespace JukeBoxAssignmentv1._1
 
         private void CloseAbout_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("heello");
             Close();
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SelectGenre_HscrollBar = new System.Windows.Forms.HScrollBar();
@@ -40,6 +41,7 @@
             this.About_MenuStrip_Btn = new System.Windows.Forms.ToolStripMenuItem();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.Copyright_Lbl = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.HierarchicalMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -59,10 +61,12 @@
             // 
             // SelectGenre_HscrollBar
             // 
+            this.SelectGenre_HscrollBar.LargeChange = 1;
             this.SelectGenre_HscrollBar.Location = new System.Drawing.Point(0, 77);
             this.SelectGenre_HscrollBar.Name = "SelectGenre_HscrollBar";
             this.SelectGenre_HscrollBar.Size = new System.Drawing.Size(181, 20);
             this.SelectGenre_HscrollBar.TabIndex = 2;
+            this.SelectGenre_HscrollBar.ValueChanged += new System.EventHandler(this.SelectGenre_HscrollBar_ValueChanged);
             // 
             // GenreList_lstBox
             // 
@@ -71,6 +75,7 @@
             this.GenreList_lstBox.Name = "GenreList_lstBox";
             this.GenreList_lstBox.Size = new System.Drawing.Size(181, 56);
             this.GenreList_lstBox.TabIndex = 1;
+            this.GenreList_lstBox.DoubleClick += new System.EventHandler(this.GenreList_lstBox_DoubleClick);
             // 
             // GenreTitle_txtBox
             // 
@@ -131,6 +136,7 @@
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(211, 23);
             this.axWindowsMediaPlayer1.TabIndex = 6;
             this.axWindowsMediaPlayer1.Visible = false;
+            this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Copyright_Lbl
@@ -142,6 +148,10 @@
             this.Copyright_Lbl.Size = new System.Drawing.Size(168, 13);
             this.Copyright_Lbl.TabIndex = 7;
             this.Copyright_Lbl.Text = "Copyright © Miles Ejgierd - Waring";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -159,6 +169,7 @@
             this.MainMenuStrip = this.HierarchicalMenu;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.HierarchicalMenu.ResumeLayout(false);
@@ -182,6 +193,7 @@
         private System.Windows.Forms.ToolStripMenuItem About_MenuStrip_Btn;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Label Copyright_Lbl;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
